@@ -1,0 +1,165 @@
+.solara-custom-panel {
+    margin: 0 0 18px;
+    padding: 16px;
+    border: 1px solid var(--border-color, rgba(128,128,128,.22));
+    border-radius: 16px;
+    background: var(--card-bg, rgba(128,128,128,.05));
+    color: var(--text-color, inherit);
+}
+.solara-custom-panel[hidden] { display: none !important; }
+.solara-custom-header,
+.solara-custom-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.solara-custom-header h3,
+.solara-custom-detail-header h4 { margin: 0; }
+.solara-custom-panel button {
+    min-height: 36px;
+    padding: 7px 12px;
+    border: 1px solid var(--border-color, rgba(128,128,128,.25));
+    border-radius: 9px;
+    background: var(--card-bg, transparent);
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+.solara-custom-panel button:hover { filter: brightness(.94); }
+.solara-custom-message { min-height: 1.3em; margin: 10px 0; opacity: .8; }
+.solara-custom-layout {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.8fr) minmax(0, 2fr);
+    gap: 14px;
+}
+.solara-custom-list,
+.solara-custom-detail {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--border-color, rgba(128,128,128,.18));
+    border-radius: 12px;
+}
+.solara-custom-list { display: flex; flex-direction: column; gap: 7px; }
+.solara-custom-playlist-item { text-align: left; overflow-wrap: anywhere; }
+.solara-custom-playlist-item.is-selected {
+    border-color: var(--accent-color, #6d7cff);
+    background: var(--hover-bg, rgba(100,120,255,.12));
+}
+.solara-custom-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.solara-custom-panel .is-danger { color: #c43d3d; }
+.solara-custom-song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color, rgba(128,128,128,.14));
+}
+.solara-custom-song:last-child { border-bottom: 0; }
+.solara-custom-song-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.solara-custom-song-info strong,
+.solara-custom-song-info span { overflow-wrap: anywhere; }
+.solara-custom-song-info span { opacity: .72; font-size: .9em; }
+@media (max-width: 600px) {
+    .solara-custom-layout { grid-template-columns: 1fr; }
+    .solara-custom-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .solara-custom-song { align-items: flex-start; }
+}
+
+
+/* Solara custom playlist desktop refinements */
+html.desktop-view .solara-browse-nav {
+    justify-content: flex-start;
+}
+
+html.desktop-view .solara-browse-nav button {
+    flex: 0 0 calc((100% - 32px) / 5 * .8);
+}
+
+/* 只缩短歌词面板，不改变网格列宽或其他区域 */
+html.desktop-view .container > #lyrics {
+    width: 85%;
+    justify-self: end;
+}
+
+
+/* 自定义歌单循环按钮：始终显示边框，开启时使用深灰色底色 */
+.solara-custom-panel .solara-custom-loop-toggle {
+    box-sizing: border-box;
+    flex: 0 0 40px;
+    width: 40px !important;
+    height: 40px !important;
+    min-height: 40px;
+    padding: 0;
+    border: 1px solid #888 !important;
+    border-radius: 50%;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--text-color);
+    opacity: 1;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+
+/* 关闭状态：透明背景，保留边框 */
+.solara-custom-panel .solara-custom-loop-toggle:not(.active) {
+    background: transparent !important;
+    border: 1px solid #888 !important;
+    color: var(--text-color) !important;
+}
+
+/* 开启状态：深灰色背景、浅色图标和清晰边框 */
+.solara-custom-panel .solara-custom-loop-toggle.active {
+    background: #343434 !important;
+    border: 1px solid #666 !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    opacity: 1 !important;
+    transform: none;
+}
+
+/* 开启状态下，悬停也保持深灰色背景 */
+.solara-custom-panel .solara-custom-loop-toggle.active:hover {
+    background: #343434 !important;
+    border: 1px solid #777 !important;
+    color: #fff !important;
+    opacity: 1 !important;
+    transform: none;
+}
+
+/* 关闭状态悬停时保留透明背景和边框 */
+.solara-custom-panel .solara-custom-loop-toggle:not(.active):hover {
+    background: transparent !important;
+    border: 1px solid #666 !important;
+    opacity: 1 !important;
+    transform: none;
+}
+.solara-custom-song-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.solara-custom-song-actions button {
+    min-height: 32px;
+    padding: 5px 9px;
+}
+@media (max-width: 600px) {
+    .solara-custom-song {
+        flex-direction: column;
+    }
+    .solara-custom-song-actions {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+/* 自定义歌单循环按钮：复用首页循环图标的尺寸 */
+.solara-custom-panel .solara-custom-loop-toggle .apple-svg-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,25 @@
+.solara-browse-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;padding:5px;border:1px solid var(--border-color,rgba(128,128,128,.2));border-radius:14px;background:var(--card-bg,rgba(128,128,128,.06))}
+.solara-browse-nav button{flex:1 1 74px;min-height:38px;padding:8px 14px;border:0;border-radius:10px;color:var(--text-color,inherit);background:transparent;font:inherit;cursor:pointer}
+.solara-browse-nav button:hover{background:rgba(128,128,128,.12)}
+.solara-browse-nav button.is-active{background:var(--accent-bg,rgba(90,110,240,.16));font-weight:650}
+.solara-browse-panel{margin:0 0 18px;padding:16px;border:1px solid var(--border-color,rgba(128,128,128,.2));border-radius:16px;background:var(--card-bg,rgba(128,128,128,.045))}
+.solara-browse-panel[hidden]{display:none!important}
+.solara-browse-panel-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.solara-browse-panel-header h3{margin:0;font-size:1.05rem}
+.solara-browse-batch-actions{display:flex;flex-wrap:wrap;gap:8px}
+.solara-browse-batch-actions button,.solara-browse-category,.solara-browse-track-actions button{min-height:34px;padding:7px 11px;border:1px solid var(--border-color,rgba(128,128,128,.25));border-radius:9px;color:var(--text-color,inherit);background:transparent;cursor:pointer;font:inherit}
+.solara-browse-batch-actions button:disabled{opacity:.45;cursor:not-allowed}
+#solaraBrowseMessage{margin:8px 0 12px;font-size:.9rem;opacity:.78}
+.solara-browse-categories{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.solara-browse-category:hover,.solara-browse-track-actions button:hover,.solara-browse-batch-actions button:not(:disabled):hover{background:rgba(128,128,128,.12)}
+.solara-browse-track-list{display:grid;gap:8px}
+.solara-browse-track{display:grid;grid-template-columns:20px 44px minmax(0,1fr) auto;align-items:center;gap:10px;padding:9px;border:1px solid var(--border-color,rgba(128,128,128,.16));border-radius:12px}
+.solara-browse-select{width:16px;height:16px;accent-color:var(--accent-color,#6677ee)}
+.solara-browse-cover{display:grid;place-items:center;width:44px;height:44px;overflow:hidden;border-radius:8px;background:rgba(128,128,128,.12);font-size:1.35rem}
+.solara-browse-cover img{display:block;width:100%;height:100%;object-fit:cover}
+.solara-browse-track-info{min-width:0}
+.solara-browse-track-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.solara-browse-track-meta{margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.82rem;opacity:.72}
+.solara-browse-track-actions{display:flex;gap:6px}
+.solara-browse-track-actions .solara-browse-play{border-color:var(--accent-color,#6677ee);background:var(--accent-bg,rgba(90,110,240,.12))}
+@media(max-width:600px){.solara-browse-panel{padding:11px}.solara-browse-panel-header{align-items:flex-start;flex-direction:column}.solara-browse-track{grid-template-columns:18px 38px minmax(0,1fr);gap:8px}.solara-browse-cover{width:38px;height:38px}.solara-browse-track-actions{grid-column:3}.solara-browse-track-actions button{min-height:31px;padding:5px 10px}}
